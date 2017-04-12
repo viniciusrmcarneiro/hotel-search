@@ -8,12 +8,12 @@ describe('<HotelInfo />', function(){
     const hotelInfoProps = {
         "title": "Courtyard by Marriott Sydney-North Ryde",
         "address": "7-11 Talavera Rd, North Ryde",
-        "image": "https://unsplash.it/145/125/?random",
+        "imageUrl": "https://unsplash.it/145/125/?random",
         "rating": "4",
     };
 
     it('should render with self rating', function(){
-        const props = Object.assign({"rating_type": "self"}, hotelInfoProps);
+        const props = Object.assign({"ratingType": "self"}, hotelInfoProps);
         const wrapper = shallow( <HotelInfo  {...props} /> );
     });
 
