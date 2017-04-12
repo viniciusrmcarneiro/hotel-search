@@ -22,7 +22,8 @@ describe('<Hotel />', function(){
             "currency": "AUD",
             "savings": "$30~",
             "pointsEarned": "0",
-            "freeCancellation": "true"
+            "freeCancellation": "true",
+            "qtyNights": "1",
         },
     };
 
