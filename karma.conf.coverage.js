@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = function(config) {
     const karamConfig = require('./karma.config.base')();
 
-    karamConfig.reporters = ['coverage',];
+    karamConfig.reporters = ['mocha','coverage',];
     karamConfig.coverageReporter = {
         dir: 'coverage',
         reporters: [
