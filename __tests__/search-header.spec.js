@@ -14,7 +14,8 @@ describe('<SearchHeader />', function(){
     beforeEach(() => {
         searchProps = {
             cityName: "Sydney",
-            hotelsCount: 5,
+            hotelsCount: "5",
+            sortValue: "top-deals",
             sortOptions: {
                 "top-deals": "Top Deals",
                 "price-desc": "Price (high-low)",
@@ -34,7 +35,7 @@ describe('<SearchHeader />', function(){
         const wrapper = shallow( <SearchHeader {...searchProps} /> )
     });
 
-    it('should call onSearchFilter when a Filter is selected', function(){
+    it('should call onSearchFilter when a Sort is selected', function(){
         const wrapper = shallow( <SearchHeader {...searchProps} /> );
         const eventObj = { target: { value : 'name-asc'} };
         wrapper.find('#sort-input').simulate('change',  eventObj);
