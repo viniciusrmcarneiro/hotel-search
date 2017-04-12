@@ -25,5 +25,10 @@ describe('<Room />', function(){
         expect(wrapper.find(RoomPrice).exists()).to.be.true;
     });
 
+    it("should render room's info", function(){
+        const wrapper = shallow( <Room {...roomProps} /> )
+        expect(wrapper.find(RoomInfo).exists()).to.be.true;
+    });
+
 
 });
