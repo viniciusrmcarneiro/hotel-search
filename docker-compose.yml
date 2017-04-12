@@ -1,0 +1,29 @@
+version: '2.1'
+services:
+  app-base:
+    build:
+      context: ./
+      dockerfile: dev.Dockerfile
+    volumes:
+      - $PWD:/app
+      - $HOME:/root
+  app-dev:
+    extends:
+      service: app-base
+    ports:
+      - "4000:4000"
+  app-test:
+    extends:
+      service: app-base
+    command: npm run test-coverage
+    ports:
+      - "9876:9876"
+  app-deploy:
+    extends:
+      service: app-base
+    ports:
+      - "4000:4000"
+    image: viniciusrmcarneiro/hotel-search:latest
+    build:
+      context: ./
+      dockerfile: deploy.Dockerfile
