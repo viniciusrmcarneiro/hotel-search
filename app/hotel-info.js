@@ -6,7 +6,8 @@ const HotelInfo = ({title, address, imageUrl, rating, ratingType})  => (
         <span>{title}</span>
         <span>{address}</span>
         <img src={imageUrl}/>
-        <span>{ratingType}={rating}</span>
+        {ratingType == 'self' && <span className="rating-self">{rating}</span>}
+        {ratingType == 'star' && <span className="rating-star">{rating}</span>}
     </div>
 );
 
@@ -17,7 +18,7 @@ HotelInfo.propTypes = {
     address : PropTypes.string.isRequired,
     imageUrl : PropTypes.string.isRequired,
     rating : PropTypes.string.isRequired,
-    ratingType: PropTypes.oneOf(['self']).isRequired,
+    ratingType: PropTypes.oneOf(['self','star']).isRequired,
 };
 
 module.exports = HotelInfo;
