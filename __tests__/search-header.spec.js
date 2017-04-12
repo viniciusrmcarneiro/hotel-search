@@ -3,8 +3,6 @@ import sinon from 'sinon';
 
 import { shallow } from 'enzyme';
 
-import {expect} from 'chai';
-
 describe('<SearchHeader />', function(){
     const SearchHeader = require('../app/search-header.js');
     let sandbox = sinon.sandbox.create();;
