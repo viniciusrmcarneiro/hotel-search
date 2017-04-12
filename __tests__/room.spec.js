@@ -8,7 +8,7 @@ import RoomInfo from '../app/room-info.js';
 describe('<Room />', function(){
     const Room = require('../app/room.js');
     const roomProps = {
-        title: "Deluxe Balcony Room",
+        name: "Deluxe Balcony Room",
         pointsEarned: "0",
         currency: 'AUD',
         qtyNights: '1',

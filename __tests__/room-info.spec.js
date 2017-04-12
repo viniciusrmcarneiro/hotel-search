@@ -6,7 +6,7 @@ import { expect } from 'chai';
 describe('<RoomInfo />', function(){
     const RoomInfo = require('../app/room-info.js');
     const roomInfoProps = {
-        title: "Deluxe Balcony Room",
+        name: "Deluxe Balcony Room",
         pointsEarned: "0",
     };
 
