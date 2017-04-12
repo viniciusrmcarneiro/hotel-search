@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { expect } from 'chai';
+import RoomPrice from '../app/room-price.js';
 
 describe('<Room />', function(){
     const Room = require('../app/room.js');
@@ -16,6 +17,11 @@ describe('<Room />', function(){
 
     it('should render', function(){
         const wrapper = shallow( <Room {...roomProps} /> )
+    });
+
+    it("should render room's price", function(){
+        const wrapper = shallow( <Room {...roomProps} /> )
+        expect(wrapper.find(RoomPrice).exists()).to.be.true;
     });
 
 
