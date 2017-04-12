@@ -15,6 +15,13 @@ describe('<HotelInfo />', function(){
     it('should render with self rating', function(){
         const props = Object.assign({"ratingType": "self"}, hotelInfoProps);
         const wrapper = shallow( <HotelInfo  {...props} /> );
+        expect(wrapper.find('.rating-self').exists()).to.be.true;
+    });
+
+    it('should render with star rating', function(){
+        const props = Object.assign({"ratingType": "star"}, hotelInfoProps);
+        const wrapper = shallow( <HotelInfo  {...props} /> );
+        expect(wrapper.find('.rating-star').exists()).to.be.true;
     });
 
 });
