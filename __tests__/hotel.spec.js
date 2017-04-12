@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import HotelInfo from '../app/hotel-info';
+import Room from '../app/room';
 
 describe('<Hotel />', function(){
     const Hotel = require('../app/hotel.js');
@@ -30,5 +31,9 @@ describe('<Hotel />', function(){
         expect(wrapper.find(HotelInfo).exists()).to.be.true;
     });
 
+    it('should render room', function(){
+        const wrapper = shallow( <Hotel {...hotelProps} /> );
+        expect(wrapper.find(Room).exists()).to.be.true;
+    });
 
 });
