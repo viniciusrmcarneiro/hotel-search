@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RoomInfo = ({name, points_earned, free_cancellation,})  => (
+const RoomInfo = ({name, pointsEarned, freeCancellation,})  => (
     <div>
         <span>{name}</span>
-        <span>{points_earned}</span>
-        {free_cancellation && <span className="room-free-cancellation">Free cancellation</span>}
+        <span>{pointsEarned}</span>
+        {freeCancellation && <span className="room-free-cancellation">Free cancellation</span>}
     </div>
 );
 
@@ -13,8 +13,8 @@ RoomInfo.displayName = 'RoomInfo';
 
 RoomInfo.propTypes = {
     name: PropTypes.string.isRequired,
-    points_earned: PropTypes.string.isRequired,
-    free_cancellation: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
+    pointsEarned: PropTypes.string.isRequired,
+    freeCancellation: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
 };
 
 module.exports = RoomInfo;
