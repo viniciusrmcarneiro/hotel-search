@@ -3,11 +3,12 @@ import { shallow } from 'enzyme';
 
 import { expect } from 'chai';
 import RoomPrice from '../app/room-price.js';
+import RoomInfo from '../app/room-info.js';
 
 describe('<Room />', function(){
     const Room = require('../app/room.js');
     const roomProps = {
-        name: "Deluxe Balcony Room",
+        title: "Deluxe Balcony Room",
         pointsEarned: "0",
         currency: 'AUD',
         qtyNights: '1',

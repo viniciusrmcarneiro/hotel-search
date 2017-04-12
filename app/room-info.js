@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RoomInfo = ({name, pointsEarned, freeCancellation,})  => (
+const RoomInfo = ({title, pointsEarned, freeCancellation,})  => (
     <div>
-        <span>{name}</span>
+        <span>{title}</span>
         <span>{pointsEarned}</span>
         {freeCancellation && <span className="room-free-cancellation">Free cancellation</span>}
     </div>
@@ -12,7 +12,7 @@ const RoomInfo = ({name, pointsEarned, freeCancellation,})  => (
 RoomInfo.displayName = 'RoomInfo';
 
 RoomInfo.propTypes = {
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     pointsEarned: PropTypes.string.isRequired,
     freeCancellation: PropTypes.oneOfType([PropTypes.bool,PropTypes.string]),
 };
