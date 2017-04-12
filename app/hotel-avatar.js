@@ -9,7 +9,7 @@ const HotelAvatar = ({promotionDescription, avatarUrl,})  => (
 HotelAvatar.displayName = 'HotelAvatar';
 
 HotelAvatar.propTypes = {
-    promotionDescription: PropTypes.string.isRequired,
+    promotion: PropTypes.string.isRequired,
     avatarUrl: PropTypes.string.isRequired,
 }
 

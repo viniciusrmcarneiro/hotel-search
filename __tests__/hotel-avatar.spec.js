@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 describe('<HotelAvatar />', function(){
     const HotelAvatar = require('../app/hotel-avatar.js');
     const avatarProps = {
-        promotionDescription: "Exclusive Deal",
+        promotion: "Exclusive Deal",
         avatarUrl: "https://unsplash.it/145/125/?random",
     };
 
