@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 describe('<RoomPrice />', function(){
-    const RoomPrice = require('../app/room-price.js');
+    const RoomPrice = require('../../app/components/room-price.js');
     const hotelProps = {
         currency: 'AUD',
         qtyNights: '1',

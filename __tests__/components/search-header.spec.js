@@ -4,7 +4,7 @@ import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
 describe('<SearchHeader />', function(){
-    const SearchHeader = require('../app/search-header.js');
+    const SearchHeader = require('../../app/components/search-header.js');
     let sandbox = sinon.sandbox.create();;
     let searchProps;
 

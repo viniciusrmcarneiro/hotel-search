@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 describe('<RoomInfo />', function(){
-    const RoomInfo = require('../app/room-info.js');
+    const RoomInfo = require('../../app/components/room-info.js');
     const roomInfoProps = {
         name: "Deluxe Balcony Room",
         pointsEarned: "0",

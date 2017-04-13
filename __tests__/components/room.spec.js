@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { expect } from 'chai';
-import RoomPrice from '../app/room-price.js';
-import RoomInfo from '../app/room-info.js';
+import RoomPrice from '../../app/components/room-price.js';
+import RoomInfo from '../../app/components/room-info.js';
 
 describe('<Room />', function(){
-    const Room = require('../app/room.js');
+    const Room = require('../../app/components/room.js');
     const roomProps = {
         name: "Deluxe Balcony Room",
         pointsEarned: "0",

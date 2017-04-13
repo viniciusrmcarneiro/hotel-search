@@ -3,12 +3,12 @@ import { shallow } from 'enzyme';
 
 import { expect } from 'chai';
 
-import HotelAvatar from '../app/hotel-avatar';
-import HotelInfo from '../app/hotel-info';
-import Room from '../app/room';
+import HotelAvatar from '../../app/components/hotel-avatar';
+import HotelInfo from '../../app/components/hotel-info';
+import Room from '../../app/components/room';
 
 describe('<Hotel />', function(){
-    const Hotel = require('../app/hotel.js');
+    const Hotel = require('../../app/components/hotel.js');
     const hotelProps = {
         "id": "cxd650nuyo",
         "title": "Courtyard by Marriott Sydney-North Ryde",

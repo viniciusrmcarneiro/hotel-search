@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 describe('<HotelInfo />', function(){
-    const HotelInfo = require('../app/hotel-info.js');
+    const HotelInfo = require('../../app/components/hotel-info.js');
     const hotelInfoProps = {
         "title": "Courtyard by Marriott Sydney-North Ryde",
         "address": "7-11 Talavera Rd, North Ryde",
