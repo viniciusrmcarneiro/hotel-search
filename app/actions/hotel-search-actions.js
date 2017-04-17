@@ -3,6 +3,7 @@ import api from 'app/actions/api-actions';
 import {
     HOTEL_SEARCH_REQUEST,
     HOTEL_SEARCH_SUCCESS,
+    HOTEL_SEARCH_SORT_BY_PRICE,
 } from 'app/actions/action-types';
 
 const convertRoom = ({points_earned: pointsEarned, free_cancellation: freeCancellation, qtyNights = 1,...room,}) => ({
@@ -46,9 +47,21 @@ export const hotelSearch = ({city}) => dispatch => {
                 hotelsIds: hotels.map(({id}) => id),
             };
 
-            console.log({value});
             dispatch(value);
 
         });
     
+}
+
+export const sortByPrice = () => (dispatch, getState) => {
+    const state = getState().hotelSearch
+    const hotelsIds = Object.keys(state.hotelsById)
+        .map( id => ({ id, price: getPrice(state.hotelsById[id].room) }) )
+        .sort( (a,b) => a.price - b.price)
+        .map( hotel => hotel.id );
+
+    dispatch({
+        type: HOTEL_SEARCH_SORT_BY_PRICE,
+        hotelsIds,
+    });
 }

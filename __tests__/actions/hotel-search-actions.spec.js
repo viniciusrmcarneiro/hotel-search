@@ -7,6 +7,7 @@ import {expect} from 'chai';
 
 import {
     hotelSearch,
+    sortByPrice,
 } from 'app/actions/hotel-search-actions';
 
 import api from 'app/actions/api-actions';
@@ -14,6 +15,7 @@ import api from 'app/actions/api-actions';
 import {
     HOTEL_SEARCH_REQUEST,
     HOTEL_SEARCH_SUCCESS,
+    HOTEL_SEARCH_SORT_BY_PRICE,
 } from 'app/actions/action-types';
 
 import mockData from '../mock-data'
@@ -57,5 +59,22 @@ describe('HOTEL SEARCH ACTIONS', function(){
         })
     });
 
+    it('should sort by price', function(){
+        const expectedActions = [
+            {
+                type: HOTEL_SEARCH_SORT_BY_PRICE,
+                hotelsIds: mockData.hotelIdsByPrice,
+            },
+        ];
+
+        const store = mockStore({
+            hotelSearch: mockData.hotelSearchStore,
+        });
+
+        store.dispatch(sortByPrice());
+
+        expect(store.getActions()).to.be.deep.equals(expectedActions);
+
+    });
 
 });

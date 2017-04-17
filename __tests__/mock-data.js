@@ -197,7 +197,9 @@ const hotelSearchStore = {
         }
     },
 };
+
 module.exports = Object.freeze({
     hotelSearch,
     hotelSearchStore,
+    hotelIdsByPrice: ["xbtlihs45t","kwjf8jlxg9","cxd650nuyo","mesq6mggyn","5lm8loqk1s"]
 });
