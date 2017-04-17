@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import HotelRating from './hotel-rating';
 const HotelInfo = ({title, address, imageUrl, rating, ratingType})  => (
     <div>
         <span>{title}</span>
         <span>{address}</span>
-        <img src={imageUrl}/>
-        {ratingType == 'self' && <span className="rating-self">{rating}</span>}
-        {ratingType == 'star' && <span className="rating-star">{rating}</span>}
+        <img src={imageUrl} style={{height: 125, width: 145,}}/>
+        <HotelRating ratingValue={rating} ratingType={ratingType}/>
     </div>
 );
 

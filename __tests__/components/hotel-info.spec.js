@@ -10,18 +10,20 @@ describe('<HotelInfo />', function(){
         "address": "7-11 Talavera Rd, North Ryde",
         "imageUrl": "https://unsplash.it/145/125/?random",
         "rating": "4",
+        "ratingType": "self",
     };
 
-    it('should render with self rating', function(){
-        const props = Object.assign({"ratingType": "self"}, hotelInfoProps);
-        const wrapper = shallow( <HotelInfo  {...props} /> );
-        expect(wrapper.find('.rating-self').exists()).to.be.true;
+    it('should render', function(){
+        const wrapper = shallow( <HotelInfo  {...hotelInfoProps} /> );
     });
 
-    it('should render with star rating', function(){
-        const props = Object.assign({"ratingType": "star"}, hotelInfoProps);
-        const wrapper = shallow( <HotelInfo  {...props} /> );
-        expect(wrapper.find('.rating-star').exists()).to.be.true;
+    it('should render an image 145px wide ', function(){
+        const wrapper = shallow( <HotelInfo  {...hotelInfoProps} /> );
+        expect(wrapper.find('img').prop('style')).to.have.property('width').to.be.equals(145);
     });
 
+    it('should render an image 125px high ', function(){
+        const wrapper = shallow( <HotelInfo  {...hotelInfoProps} /> );
+        expect(wrapper.find('img').prop('style')).to.have.property('height').to.be.equals(125);
+    });
 });
