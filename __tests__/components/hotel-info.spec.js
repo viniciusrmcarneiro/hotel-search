@@ -10,7 +10,7 @@ describe('<HotelInfo />', function(){
         "address": "7-11 Talavera Rd, North Ryde",
         "imageUrl": "https://unsplash.it/145/125/?random",
         "rating": "4",
-        "ratingType": "self",
+        "rating_type": "self",
     };
 
     it('should render', function(){

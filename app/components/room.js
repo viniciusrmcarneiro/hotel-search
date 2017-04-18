@@ -5,11 +5,11 @@ import RoomInfo from './room-info';
 import RoomPrice from './room-price';
 
 const Room = ({
-    name, pointsEarned, freeCancellation,
+    name, points_earned, freeCancellation,
     price, currency, qtyNights, savings,
 })  => (
     <div>
-        <RoomInfo {...{name, pointsEarned, freeCancellation}}/>
+        <RoomInfo {...{name, points_earned, freeCancellation}}/>
         <RoomPrice {...{price, currency, qtyNights, savings,}}/>
     </div>
 );
@@ -18,7 +18,7 @@ Room.displayName = 'Room';
 
 Room.propTypes = {
     name : PropTypes.any.isRequired,
-    pointsEarned : PropTypes.any.isRequired,
+    points_earned : PropTypes.any.isRequired,
     freeCancellation : PropTypes.any,
 
     price: PropTypes.any.isRequired,

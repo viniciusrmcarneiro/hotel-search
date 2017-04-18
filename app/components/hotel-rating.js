@@ -24,21 +24,21 @@ const renderStarIcon = (Shape) => (nextValue, prevValue) => {
     return <Shape color={_unratedColor}/>
 }
 
-const HotelRating = ({ratingValue, ratingType, ratingComponent})  => (
+const HotelRating = ({rating_value, rating_type, ratingComponent})  => (
     <StarRatingComponent
         name="hotel-rating"
-        value={parseInt(ratingValue)}
+        value={parseInt(rating_value)}
         starCount={5}
         editing={false}
-        renderStarIcon={renderStarIcon(ratingType == "self" ? RatingIconCircle : RatingIconStar)}
+        renderStarIcon={renderStarIcon(rating_type == "self" ? RatingIconCircle : RatingIconStar)}
     />
 );
 
 HotelRating.displayName = 'HotelRating';
 
 HotelRating.propTypes = {
-    ratingValue : PropTypes.any.isRequired,
-    ratingType: PropTypes.oneOf(['self','star']).isRequired,
+    rating_value : PropTypes.any.isRequired,
+    rating_type: PropTypes.oneOf(['self','star']).isRequired,
 };
 
 module.exports = HotelRating;

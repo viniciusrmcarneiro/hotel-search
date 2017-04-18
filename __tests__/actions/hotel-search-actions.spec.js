@@ -7,7 +7,7 @@ import {expect} from 'chai';
 
 import {
     hotelSearch,
-    sortByPrice,
+    sortBy,
 } from 'app/actions/hotel-search-actions';
 
 import api from 'app/actions/api-actions';
@@ -45,7 +45,7 @@ describe('HOTEL SEARCH ACTIONS', function(){
             },
             {
                 type: HOTEL_SEARCH_SUCCESS,
-                ...mockData.hotelSearchStore,
+                ...mockData.hotelSearch,
             },
         ];
 
@@ -63,15 +63,24 @@ describe('HOTEL SEARCH ACTIONS', function(){
         const expectedActions = [
             {
                 type: HOTEL_SEARCH_SORT_BY_PRICE,
-                hotelsIds: mockData.hotelIdsByPrice,
+                fieldName: 'price',
             },
         ];
 
-        const store = mockStore({
-            hotelSearch: mockData.hotelSearchStore,
-        });
+        const store = mockStore({});
 
-        store.dispatch(sortByPrice());
+        store.dispatch(sortBy('price'));
+
+        expect(store.getActions()).to.be.deep.equals(expectedActions);
+
+    });
+
+    it('should sort by an unknown field', function(){
+        const expectedActions = [];
+
+        const store = mockStore({});
+
+        store.dispatch(sortBy('any unknown field name'));
 
         expect(store.getActions()).to.be.deep.equals(expectedActions);
 

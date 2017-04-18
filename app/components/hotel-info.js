@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HotelRating from './hotel-rating';
-const HotelInfo = ({title, address, imageUrl, rating, ratingType})  => (
+const HotelInfo = ({title, address, imageUrl, rating, rating_type})  => (
     <div>
         <span>{title}</span>
         <span>{address}</span>
         <img src={imageUrl} style={{height: 125, width: 145,}}/>
-        <HotelRating ratingValue={rating} ratingType={ratingType}/>
+        <HotelRating rating_value={rating} rating_type={rating_type}/>
     </div>
 );
 
@@ -17,7 +17,7 @@ HotelInfo.propTypes = {
     address : PropTypes.string.isRequired,
     imageUrl : PropTypes.string.isRequired,
     rating : PropTypes.string.isRequired,
-    ratingType: PropTypes.oneOf(['self','star']).isRequired,
+    rating_type: PropTypes.oneOf(['self','star']).isRequired,
 };
 
 module.exports = HotelInfo;

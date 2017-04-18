@@ -15,15 +15,15 @@ describe('<Hotel />', function(){
         "address": "7-11 Talavera Rd, North Ryde",
         "imageUrl": "https://unsplash.it/145/125/?random",
         "rating": "4",
-        "ratingType": "self",
+        "rating_type": "self",
         "promotion": "Exclusive Deal",
         "room": {
             "name": "Deluxe Balcony Room",
             "price": "$329",
             "currency": "AUD",
             "savings": "$30~",
-            "pointsEarned": "0",
-            "freeCancellation": "true",
+            "points_earned": "0",
+            "free_cancellation": "true",
             "qtyNights": "1",
         },
     };

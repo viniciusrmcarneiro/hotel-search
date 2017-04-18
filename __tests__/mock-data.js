@@ -119,8 +119,8 @@ const hotelSearchStore = {
                     "price": "$329",
                     "currency": "AUD",
                     "savings": "$30~",
-                    "pointsEarned": "0",
-                    "freeCancellation": "true"
+                    "points_earned": "0",
+                    "free_cancellation": "true"
                 }
         }, 
         "mesq6mggyn": {
@@ -137,8 +137,8 @@ const hotelSearchStore = {
                     "price": "$375",
                     "currency": "AUD",
                     "savings": "$28",
-                    "pointsEarned": "2250",
-                    "freeCancellation": "true"
+                    "points_earned": "2250",
+                    "free_cancellation": "true"
                 }
         }, 
         "xbtlihs45t": {
@@ -155,8 +155,8 @@ const hotelSearchStore = {
                     "price": "$227",
                     "currency": "AUD",
                     "savings": "0",
-                    "pointsEarned": "831",
-                    "freeCancellation": "false"
+                    "points_earned": "831",
+                    "free_cancellation": "false"
                 }
         }, 
         "5lm8loqk1s": {
@@ -173,8 +173,8 @@ const hotelSearchStore = {
                     "price": "$535",
                     "currency": "AUD",
                     "savings": "0",
-                    "pointsEarned": "0",
-                    "freeCancellation": "true"
+                    "points_earned": "0",
+                    "free_cancellation": "true"
                 }
         }, 
         "kwjf8jlxg9": {
@@ -191,8 +191,8 @@ const hotelSearchStore = {
                     "price": "$295",
                     "currency": "AUD",
                     "savings": "0",
-                    "pointsEarned": "1770",
-                    "freeCancellation": "true"
+                    "points_earned": "1770",
+                    "free_cancellation": "true"
                 }
         }
     },

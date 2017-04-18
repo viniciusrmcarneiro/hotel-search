@@ -11,7 +11,7 @@ describe('<HotelHating />', function(){
 
 
     it('should renders the star icon', function(){
-        const wrapper = shallow( <HotelHating ratingValue="4" ratingType="star" /> )
+        const wrapper = shallow( <HotelHating rating_value="4" rating_type="star" /> )
         const {node} = wrapper.find( StarRatingComponent );
 
         const ratingWrapper = shallow( <div>{node.props.renderStarIcon(1, 1)}</div> );
@@ -19,7 +19,7 @@ describe('<HotelHating />', function(){
     });
 
     it('should render half rating', function(){
-        const wrapper = shallow( <HotelHating ratingValue="0.5" ratingType="star" /> )
+        const wrapper = shallow( <HotelHating rating_value="0.5" rating_type="star" /> )
         const {node} = wrapper.find( StarRatingComponent );
 
         const ratingWrapper = shallow( <div>{node.props.renderStarIcon(1, 0.5)}</div> );
@@ -30,7 +30,7 @@ describe('<HotelHating />', function(){
     });
 
     it('should render a integer rating', function(){
-        const wrapper = shallow( <HotelHating ratingValue="1" ratingType="star" /> )
+        const wrapper = shallow( <HotelHating rating_value="1" rating_type="star" /> )
         const {node} = wrapper.find( StarRatingComponent );
 
         const ratingWrapper = shallow( <div>{node.props.renderStarIcon(1, 1)}</div> );
@@ -41,7 +41,7 @@ describe('<HotelHating />', function(){
     });
 
     it('should renders the circle as a self rating icon', function(){
-        const wrapper = shallow( <HotelHating ratingValue="4" ratingType="self" /> )
+        const wrapper = shallow( <HotelHating rating_value="4" rating_type="self" /> )
         const {node} = wrapper.find( StarRatingComponent );
 
         const ratingWrapper = shallow( <div>{node.props.renderStarIcon(1, 1)}</div> );

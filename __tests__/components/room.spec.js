@@ -9,7 +9,7 @@ describe('<Room />', function(){
     const Room = require('../../app/components/room.js');
     const roomProps = {
         name: "Deluxe Balcony Room",
-        pointsEarned: "0",
+        points_earned: "0",
         currency: 'AUD',
         qtyNights: '1',
         price: '$329',
