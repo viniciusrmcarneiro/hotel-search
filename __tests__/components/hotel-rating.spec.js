@@ -28,7 +28,7 @@ describe('<HotelHating />', function(){
         const ratingWrapper = shallow( <div>{node.props.renderStarIcon(1, 0.5)}</div> );
 
         expect(ratingWrapper.find(RatingIconStar).exists()).to.be.true;
-        expect(ratingWrapper.find(RatingIconStar).prop('colorRif')).to.not.be.undefined;
+        expect(ratingWrapper.find(RatingIconStar).prop('color')).to.not.be.undefined;
         expect(ratingWrapper.find(RatingIconStar).prop('colorLeft')).to.not.be.undefined;
     });
 
