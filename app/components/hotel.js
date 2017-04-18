@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import HotelAvatar from './hotel-avatar';
 import HotelInfo from './hotel-info';
 import Room from './room';
 
 const Hotel = ({
-    imageUrl, promotion,
-    title, address, rating, rating_type,
+    image, promotion, title, address, rating, rating_type,
     room,
 })  => (
     <div>
-        <HotelAvatar {...{ avatarUrl: imageUrl, promotion}} />
-        <HotelInfo {...{title, address, imageUrl, rating, rating_type}} />
+        <HotelInfo {...{image, promotion, title, address, image, rating, rating_type}} />
         <Room {...room} />
     </div>
 );
@@ -20,9 +17,8 @@ const Hotel = ({
 Hotel.displayName = 'Hotel';
 
 Hotel.propTypes = {
-    imageUrl : PropTypes.string.isRequired,
+    image : PropTypes.string.isRequired,
     promotion : PropTypes.string.isRequired,
-
     title : PropTypes.string.isRequired,
     address : PropTypes.string.isRequired,    
     rating : PropTypes.string.isRequired,

@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { expect } from 'chai';
 
-import HotelAvatar from '../../app/components/hotel-avatar';
 import HotelInfo from '../../app/components/hotel-info';
 import Room from '../../app/components/room';
 
@@ -13,7 +12,7 @@ describe('<Hotel />', function(){
         "id": "cxd650nuyo",
         "title": "Courtyard by Marriott Sydney-North Ryde",
         "address": "7-11 Talavera Rd, North Ryde",
-        "imageUrl": "https://unsplash.it/145/125/?random",
+        "image": "https://unsplash.it/145/125/?random",
         "rating": "4",
         "rating_type": "self",
         "promotion": "Exclusive Deal",
@@ -27,11 +26,6 @@ describe('<Hotel />', function(){
             "qtyNights": "1",
         },
     };
-
-    it("should render hotel's avatar", function(){
-        const wrapper = shallow( <Hotel {...hotelProps} /> );
-        expect(wrapper.find(HotelAvatar).exists()).to.be.true;
-    });
 
     it('should render hotel info', function(){
         const wrapper = shallow( <Hotel {...hotelProps} /> );

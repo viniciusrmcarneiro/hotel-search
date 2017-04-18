@@ -9,7 +9,7 @@ const initialState = Object.freeze({});
 
 const convertRoom = (room) => ({
     ...room,
-    qtyNights: 1,
+    qtyNights: "1",
 });
 
 const getPrice = (room) => parseFloat(room.price.replace('$', ''));

@@ -8,9 +8,10 @@ describe('<HotelInfo />', function(){
     const hotelInfoProps = {
         "title": "Courtyard by Marriott Sydney-North Ryde",
         "address": "7-11 Talavera Rd, North Ryde",
-        "imageUrl": "https://unsplash.it/145/125/?random",
+        "image": "https://unsplash.it/145/125/?random",
         "rating": "4",
         "rating_type": "self",
+        "promotion": "Deal",
     };
 
     it('should render', function(){

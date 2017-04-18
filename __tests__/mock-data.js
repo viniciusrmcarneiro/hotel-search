@@ -114,7 +114,7 @@ const hotelSearchStore = {
             "rating_type": "self",
             "promotion": "Exclusive Deal",
             "room": {
-                    qtyNights: 1,
+                    "qtyNights": "1",
                     "name": "Deluxe Balcony Room",
                     "price": "$329",
                     "currency": "AUD",
@@ -132,7 +132,7 @@ const hotelSearchStore = {
             "rating_type": "self",
             "promotion": "Exclusive Deal",
             "room": {
-                    qtyNights: 1,
+                    "qtyNights": "1",
                     "name": "Deluxe King",
                     "price": "$375",
                     "currency": "AUD",
@@ -150,7 +150,7 @@ const hotelSearchStore = {
             "rating_type": "star",
             "promotion": "Red Hot",
             "room": {
-                    qtyNights: 1,
+                    "qtyNights": "1",
                     "name": "Deluxe King Room",
                     "price": "$227",
                     "currency": "AUD",
@@ -168,7 +168,7 @@ const hotelSearchStore = {
             "rating_type": "star",
             "promotion": "Red Hot",
             "room": {
-                    qtyNights: 1,
+                    "qtyNights": "1",
                     "name": "Darling Harbour Club Room",
                     "price": "$535",
                     "currency": "AUD",
@@ -186,7 +186,7 @@ const hotelSearchStore = {
             "rating_type": "star",
             "promotion": "Bonus Points",
             "room": {
-                    qtyNights: 1,
+                    "qtyNights": "1",
                     "name": "Delue Triple",
                     "price": "$295",
                     "currency": "AUD",
