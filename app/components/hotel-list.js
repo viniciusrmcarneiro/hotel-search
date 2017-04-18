@@ -25,8 +25,18 @@ HotelList.propTypes = {
 };
 
 const mapStateToProps = state => {
-    console.log({state})
-    if (!state.hotelSearch || !state.hotelSearch.hotelsIds){
+
+    if (!state.hotelSearch){
+        return {};
+    }
+
+    if (state.hotelSearch.waiting){
+        return {
+            waiting: state.hotelSearch.waiting,
+        };
+    }
+
+    if (!state.hotelSearch.hotelsIds){
         return {};
     }
 
