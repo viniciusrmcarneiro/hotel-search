@@ -63,7 +63,6 @@ describe('HOTEL SEARCH ACTIONS', function(){
         const expectedActions = [
             {
                 type: HOTEL_SEARCH_SORT_BY_PRICE,
-                fieldName: 'price',
             },
         ];
 

@@ -33,6 +33,5 @@ export const sortBy = (fieldName) => (dispatch, getState) => {
 
     dispatch({
         type: HOTEL_SEARCH_SORT_BY_PRICE,
-        fieldName,
     });
 }
