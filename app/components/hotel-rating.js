@@ -27,7 +27,7 @@ const renderStarIcon = (Shape) => (nextValue, prevValue) => {
 const HotelRating = ({rating_value, rating_type, ratingComponent})  => (
     <StarRatingComponent
         name="hotel-rating"
-        value={parseInt(rating_value)}
+        value={parseFloat(rating_value)}
         starCount={5}
         editing={false}
         renderStarIcon={renderStarIcon(rating_type == "self" ? RatingIconCircle : RatingIconStar)}

@@ -20,17 +20,23 @@ describe('<HotelHating />', function(){
 
     it('should render half rating', function(){
         const wrapper = shallow( <HotelHating rating_value="0.5" rating_type="star" /> )
+
+        expect(wrapper.find({value: 0.5}).exists()).to.be.true;
+
         const {node} = wrapper.find( StarRatingComponent );
 
         const ratingWrapper = shallow( <div>{node.props.renderStarIcon(1, 0.5)}</div> );
 
         expect(ratingWrapper.find(RatingIconStar).exists()).to.be.true;
-        expect(ratingWrapper.find(RatingIconStar).prop('color')).to.not.be.undefined;
+        expect(ratingWrapper.find(RatingIconStar).prop('colorRif')).to.not.be.undefined;
         expect(ratingWrapper.find(RatingIconStar).prop('colorLeft')).to.not.be.undefined;
     });
 
     it('should render a integer rating', function(){
         const wrapper = shallow( <HotelHating rating_value="1" rating_type="star" /> )
+
+        expect(wrapper.find({value: 1}).exists()).to.be.true;
+        
         const {node} = wrapper.find( StarRatingComponent );
 
         const ratingWrapper = shallow( <div>{node.props.renderStarIcon(1, 1)}</div> );
