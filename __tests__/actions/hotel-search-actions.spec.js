@@ -25,11 +25,14 @@ const sinon = require('sinon');
 
 describe('HOTEL SEARCH ACTIONS', function(){
     let sandbox;
-    let middlewares = [ thunk ];
-    let mockStore = configureMockStore(middlewares);
+    let store;
+
+    const middlewares = [ thunk ];
+    const mockStore = configureMockStore(middlewares);
 
     beforeEach(() => {
         sandbox = sinon.sandbox.create();
+        store = mockStore({});
     });
 
     afterEach(() => {
@@ -49,14 +52,13 @@ describe('HOTEL SEARCH ACTIONS', function(){
             },
         ];
 
-        const store = mockStore({});
-
         return store.dispatch(hotelSearch({
             city: 'Sydney',
         }))
         .then(() =>{
             expect(store.getActions()).to.be.deep.equals(expectedActions);
         })
+
     });
 
     it('should sort by price', function(){
@@ -66,8 +68,6 @@ describe('HOTEL SEARCH ACTIONS', function(){
             },
         ];
 
-        const store = mockStore({});
-
         store.dispatch(sortBy('price'));
 
         expect(store.getActions()).to.be.deep.equals(expectedActions);
@@ -76,8 +76,6 @@ describe('HOTEL SEARCH ACTIONS', function(){
 
     it('should sort by an unknown field', function(){
         const expectedActions = [];
-
-        const store = mockStore({});
 
         store.dispatch(sortBy('any unknown field name'));
 
