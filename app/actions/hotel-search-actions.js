@@ -6,7 +6,13 @@ import {
     HOTEL_SEARCH_SORT_BY_PRICE,
 } from 'app/actions/action-types';
 
-export const hotelSearch = ({city}) => dispatch => {
+export const hotelSearch = (payload) => dispatch => {
+
+    if (!payload || !payload.city) {
+        return Promise.reject('Invalid parameters');
+    }
+
+    const {city} = payload;
 
     dispatch({type: HOTEL_SEARCH_REQUEST});
 
@@ -22,8 +28,17 @@ export const hotelSearch = ({city}) => dispatch => {
 
             dispatch(value);
 
-        });
-    
+        })
+        
+        /*
+        
+        TODO: handle error from the request
+        .catch( ex => {
+            
+        })
+        
+        */
+
 }
 
 export const sortBy = (fieldName) => (dispatch, getState) => {

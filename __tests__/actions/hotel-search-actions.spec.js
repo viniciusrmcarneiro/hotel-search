@@ -3,7 +3,8 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import {expect} from 'chai';
+import chai,{ expect } from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 
 import {
     hotelSearch,
@@ -21,6 +22,8 @@ import {
 import mockData from '../mock-data'
 
 const sinon = require('sinon');
+chai.should();
+chai.use(chaiAsPromised);
 
 
 describe('HOTEL SEARCH ACTIONS', function(){
@@ -37,6 +40,18 @@ describe('HOTEL SEARCH ACTIONS', function(){
 
     afterEach(() => {
         sandbox.restore();
+    });
+
+    it('request not providing the city', function(){
+
+        const expectedActions = [
+        ];
+
+        return store.dispatch(hotelSearch())
+            .should.be.rejected
+            .then( () => {
+                expect(store.getActions()).to.be.deep.equals(expectedActions);
+            });
     });
 
     it('request', function(){
