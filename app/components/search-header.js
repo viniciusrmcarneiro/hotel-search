@@ -8,21 +8,28 @@ import { bindActionCreators } from 'redux';
 
 import { sortBy } from 'app/actions/hotel-search-actions';
 
+import styles from './search-header.styl';
+
 export const SearchHeader = ({cityName, hotelsCount, sortValue, sortOptions, onSortChanged,})  => {
     if (!cityName || !sortValue || !sortOptions || !onSortChanged){
         return null;
     }
 
     return (
-        <div>
-            <span className="header-city-name">{cityName}</span>
-            <span className="header-hotel-count">{hotelsCount}</span>
-            <select
-                id="sort-input"
-                value={sortValue}
-                onChange={evt => onSortChanged(evt.target.value)}>
-                {Object.keys(sortOptions).map( id => <option key={id} value={id}>{sortOptions[id]}</option>)}
-            </select>
+        <div className={styles.container}>
+            <p className={styles.textContainer}>
+                <span className={styles.headerHotelCount}>{hotelsCount}</span> hotels in <span className={styles.headerCityName}>{cityName}.</span>
+            </p>
+            <div className={styles.sortContainer}>
+                <label className={styles.fieldLabel}>Sort by </label>
+                <select
+                    className={styles.sortInput}
+                    id="sort-input"
+                    value={sortValue}
+                    onChange={evt => onSortChanged(evt.target.value)}>
+                    {Object.keys(sortOptions).map( id => <option key={id} value={id}>{sortOptions[id]}</option>)}
+                </select>
+            </div>
         </div>
     )
 };
