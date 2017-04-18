@@ -2,9 +2,9 @@ import React from 'react';
 import sinon from 'sinon';
 
 import { shallow } from 'enzyme';
+import { SearchHeader } from 'app/components/search-header'
 
 describe('<SearchHeader />', function(){
-    const SearchHeader = require('../../app/components/search-header.js');
     let sandbox = sinon.sandbox.create();;
     let searchProps;
 
@@ -28,9 +28,8 @@ describe('<SearchHeader />', function(){
         sandbox.restore();
     });
 
-
-    it('should render', function(){
-        const wrapper = shallow( <SearchHeader {...searchProps} /> )
+    it('should render with no data provided', function(){
+        const wrapper = shallow( <SearchHeader /> )
     });
 
     it('should call onSearchFilter when a Sort is selected', function(){
