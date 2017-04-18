@@ -42,11 +42,12 @@ export const hotelSearch = (payload) => dispatch => {
 }
 
 export const sortBy = (fieldName) => (dispatch, getState) => {
-    if (fieldName !== 'price') {
+    if (/^price-(asc|desc)$/.test(fieldName) === false) {
         return;
     }
 
     dispatch({
         type: HOTEL_SEARCH_SORT_BY_PRICE,
+        direction: fieldName.replace(/^(.*)-(asc|desc)$/,"$2"),
     });
 }

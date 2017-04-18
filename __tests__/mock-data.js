@@ -103,7 +103,8 @@ const hotelSearchStore = {
     "query": {
         "location": "Sydney"
     },
-    hotelsIds: ["cxd650nuyo", "mesq6mggyn", "xbtlihs45t", "5lm8loqk1s", "kwjf8jlxg9",],
+    sortedField : "price-asc",
+    hotelsIds: ["xbtlihs45t","kwjf8jlxg9","cxd650nuyo","mesq6mggyn","5lm8loqk1s"],
     "hotelsById": {
         "cxd650nuyo": {
             "id": "cxd650nuyo",
@@ -201,5 +202,6 @@ const hotelSearchStore = {
 module.exports = Object.freeze({
     hotelSearch,
     hotelSearchStore,
-    hotelIdsByPrice: ["xbtlihs45t","kwjf8jlxg9","cxd650nuyo","mesq6mggyn","5lm8loqk1s"]
+    hotelIdsByPriceDesc: ["5lm8loqk1s", "mesq6mggyn", "cxd650nuyo", "kwjf8jlxg9","xbtlihs45t"],
+    hotelIdsByPriceAsc: ["xbtlihs45t","kwjf8jlxg9","cxd650nuyo","mesq6mggyn","5lm8loqk1s"],
 });

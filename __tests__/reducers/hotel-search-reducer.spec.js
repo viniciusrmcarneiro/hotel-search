@@ -36,13 +36,14 @@ describe('HOTEL SEARCH REDUCER', () => {
 
     it('should handle HOTEL_SEARCH_SUCCESS', () => {
 
-        const { query, hotels, sort_filters, hotelsById, hotelsIds, } = mockData.hotelSearchStore;
+        const { query, hotels, sort_filters, hotelsById, hotelsIds, sortedField} = mockData.hotelSearchStore;
 
         const expectedState = {
             query,
             sort_filters,
             hotelsById,
             hotelsIds,
+            sortedField,
         };
         
         const currentState = reducer(undefined, { type: HOTEL_SEARCH_REQUEST });
@@ -56,7 +57,7 @@ describe('HOTEL SEARCH REDUCER', () => {
             .to.be.deep.equals(expectedState);
     });
 
-    it('should handle HOTEL_SEARCH_SORT_BY_PRICE', () => {
+    it('should handle HOTEL_SEARCH_SORT_BY_PRICE ASC', () => {
 
         const { query, hotels, sort_filters, hotelsById, } = mockData.hotelSearchStore;
 
@@ -64,13 +65,39 @@ describe('HOTEL SEARCH REDUCER', () => {
             query,
             sort_filters,
             hotelsById,
-            hotelsIds: mockData.hotelIdsByPrice,
+            hotelsIds: mockData.hotelIdsByPriceAsc,
+            sortedField: 'price-asc',
         };
         
         const currentState = mockData.hotelSearchStore;
 
         const action = {
             type: HOTEL_SEARCH_SORT_BY_PRICE,
+            direction: 'asc',
+        };
+
+        expect(reducer(currentState, action))
+            .to.be.deep.equals(expectedState);
+    });
+
+
+    it('should handle HOTEL_SEARCH_SORT_BY_PRICE DESC', () => {
+
+        const { query, hotels, sort_filters, hotelsById, } = mockData.hotelSearchStore;
+
+        const expectedState = {
+            query,
+            sort_filters,
+            hotelsById,
+            hotelsIds: mockData.hotelIdsByPriceDesc,
+            sortedField: 'price-desc',
+        };
+        
+        const currentState = mockData.hotelSearchStore;
+
+        const action = {
+            type: HOTEL_SEARCH_SORT_BY_PRICE,
+            direction: 'desc',
         };
 
         expect(reducer(currentState, action))

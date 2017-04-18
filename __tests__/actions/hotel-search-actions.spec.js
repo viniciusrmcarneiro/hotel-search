@@ -76,14 +76,29 @@ describe('HOTEL SEARCH ACTIONS', function(){
 
     });
 
-    it('should sort by price', function(){
+    it('should sort by price-desc', function(){
         const expectedActions = [
             {
                 type: HOTEL_SEARCH_SORT_BY_PRICE,
+                direction: 'desc',
             },
         ];
 
-        store.dispatch(sortBy('price'));
+        store.dispatch(sortBy('price-desc'));
+
+        expect(store.getActions()).to.be.deep.equals(expectedActions);
+
+    });
+
+    it('should sort by price-asc', function(){
+        const expectedActions = [
+            {
+                type: HOTEL_SEARCH_SORT_BY_PRICE,
+                direction: 'asc',
+            },
+        ];
+
+        store.dispatch(sortBy('price-asc'));
 
         expect(store.getActions()).to.be.deep.equals(expectedActions);
 

@@ -41,12 +41,16 @@ function hotelSearchSuccess({query, sort_filters, hotels}){
     };
 }
 
-function hotelSortByPrice(state){
+function hotelSortByPrice(state, asc){
+    const onCompare = asc 
+        ? (a,b) => a.price - b.price
+        : (a,b) => b.price - a.price;
+
     const hotelsIds = Object.keys(state.hotelsById)
         .map( id => ({ id, price: getPrice(state.hotelsById[id].room) }) )
-        .sort( (a,b) => a.price - b.price)
+        .sort( onCompare )
         .map( hotel => hotel.id );
-    return Object.assign({}, state, { hotelsIds });
+    return Object.assign({}, state, { hotelsIds, sortedField: `price-${asc ? 'asc' : 'desc' }` });
 }
 
 export default function HotelSearch(state = initialState, {type: actionType, ...payload}) {
@@ -54,9 +58,9 @@ export default function HotelSearch(state = initialState, {type: actionType, ...
         case HOTEL_SEARCH_REQUEST:
             return { waiting: true };
         case HOTEL_SEARCH_SUCCESS:
-            return hotelSearchSuccess(payload);
+            return hotelSortByPrice(hotelSearchSuccess(payload), true);
         case HOTEL_SEARCH_SORT_BY_PRICE:
-            return hotelSortByPrice(state);
+            return hotelSortByPrice(state, payload.direction === 'asc');
     default:
         return state;
     }

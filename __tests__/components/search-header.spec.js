@@ -12,7 +12,7 @@ describe('<SearchHeader />', function(){
     beforeEach(() => {
         searchProps = {
             cityName: "Sydney",
-            hotelsCount: "5",
+            hotelsCount: 5,
             sortValue: "top-deals",
             sortOptions: {
                 "top-deals": "Top Deals",
