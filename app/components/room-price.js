@@ -8,7 +8,7 @@ const RoomPrice = ({price, currency, qtyNights, savings,})  => (
         <div className={styles.price}>{price}</div>
         <div className={styles.currency}>{currency}</div>
         <div className={styles.qtyNights}>{qtyNights}</div>
-        {savings && <div className="room-savings">{savings}</div>}
+        {(savings && savings != '0') && <div className="room-savings">{savings}</div>}
     </div>
 );
 
