@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RatingIconCircle = (props) => (
-    <svg viewBox="0 0 12 12" style={{width:"1em", height:"1em", transform: "rotate(90deg)", verticalAlign: "middle"}}>
+    <svg viewBox="0 0 12 12" style={{width:"0.8em", height:"0.8em", transform: "rotate(90deg)", verticalAlign: "middle"}}>
         <defs>
             <clipPath id="top">
             <path d="M 0 0 h 12 v 6 h -12 z" />
