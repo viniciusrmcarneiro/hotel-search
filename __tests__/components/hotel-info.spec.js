@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { expect } from 'chai';
+import HotelRating from 'app/components/hotel-rating';
+
 
 describe('<HotelInfo />', function(){
     const HotelInfo = require('../../app/components/hotel-info.js');
@@ -18,13 +20,10 @@ describe('<HotelInfo />', function(){
         const wrapper = shallow( <HotelInfo  {...hotelInfoProps} /> );
     });
 
-    it('should render an image 145px wide ', function(){
+    it('should render HotelRating', function(){
         const wrapper = shallow( <HotelInfo  {...hotelInfoProps} /> );
-        expect(wrapper.find('img').prop('style')).to.have.property('width').to.be.equals(145);
+        expect(wrapper.find(HotelRating).exists()).to.be.true;
+
     });
 
-    it('should render an image 125px high ', function(){
-        const wrapper = shallow( <HotelInfo  {...hotelInfoProps} /> );
-        expect(wrapper.find('img').prop('style')).to.have.property('height').to.be.equals(125);
-    });
 });

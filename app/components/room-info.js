@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const RoomInfo = ({name, points_earned, free_cancellation,})  => (
     <div>
-        <span>{name}</span>
-        <span>{points_earned}</span>
-        {free_cancellation && <span className="room-free-cancellation">Free cancellation</span>}
+        <div>{name}</div>
+        <div>{points_earned}</div>
+        {free_cancellation && <div className="room-free-cancellation">Free cancellation</div>}
     </div>
 );
 

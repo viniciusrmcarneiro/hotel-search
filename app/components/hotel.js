@@ -1,16 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import HotelAvatar from './hotel-avatar';
 import HotelInfo from './hotel-info';
-import Room from './room';
+
+import RoomInfo from './room-info';
+import RoomPrice from './room-price';
+
+import styles from './hotel.styl';
 
 const Hotel = ({
     image, promotion, title, address, rating, rating_type,
     room,
 })  => (
-    <div>
+    <div className={styles.hotelContainer}>
+
+        <HotelAvatar {...{image, promotion}}/>
         <HotelInfo {...{image, promotion, title, address, image, rating, rating_type}} />
-        <Room {...room} />
+
+        <RoomInfo {...room} />
+        <RoomPrice {...room} />
+
     </div>
 );
 

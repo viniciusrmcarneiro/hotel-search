@@ -7,11 +7,16 @@ describe('<RoomPrice />', function(){
         currency: 'AUD',
         qtyNights: '1',
         price: '$329',
-        savings: '$20~',
     };
 
-    it('should render', function(){
+    it('should not render savings ', function(){
         const wrapper = shallow( <RoomPrice {...hotelProps} /> )
+        expect(wrapper.find('.room-savings').exists()).to.be.false;
+    });
+
+    it('should render savings', function(){
+        const wrapper = shallow( <RoomPrice {{savings: '$20~', ...hotelProps}} /> )
+        expect(wrapper.find('.room-savings').exists()).to.be.true;
     });
 
 });

@@ -3,8 +3,11 @@ import { shallow } from 'enzyme';
 
 import { expect } from 'chai';
 
-import HotelInfo from '../../app/components/hotel-info';
-import Room from '../../app/components/room';
+import HotelAvatar from 'app/components/hotel-avatar';
+import HotelInfo from 'app/components/hotel-info';
+
+import RoomInfo from 'app/components/room-info';
+import RoomPrice from 'app/components/room-price';
 
 describe('<Hotel />', function(){
     const Hotel = require('../../app/components/hotel.js');
@@ -27,14 +30,24 @@ describe('<Hotel />', function(){
         },
     };
 
-    it('should render hotel info', function(){
+    it('should render HotelAvatar', function(){
+        const wrapper = shallow( <Hotel {...hotelProps} /> );
+        expect(wrapper.find(HotelAvatar).exists()).to.be.true;
+    });
+
+    it('should render HotelInfo', function(){
         const wrapper = shallow( <Hotel {...hotelProps} /> );
         expect(wrapper.find(HotelInfo).exists()).to.be.true;
     });
 
-    it('should render room', function(){
+    it('should render RoomInfo', function(){
         const wrapper = shallow( <Hotel {...hotelProps} /> );
-        expect(wrapper.find(Room).exists()).to.be.true;
+        expect(wrapper.find(RoomInfo).exists()).to.be.true;
+    });
+
+    it('should render RoomPrice', function(){
+        const wrapper = shallow( <Hotel {...hotelProps} /> );
+        expect(wrapper.find(RoomPrice).exists()).to.be.true;
     });
 
 });

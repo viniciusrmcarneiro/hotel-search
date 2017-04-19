@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './room-price.styl';
+
+import styles from './room.styl';
+
 const RoomPrice = ({price, currency, qtyNights, savings,})  => (
-    <div className={styles.container}>
+    <div className={styles.priceContainer}>
         <div className={styles.price}>{price}</div>
         <div className={styles.currency}>{currency}</div>
         <div className={styles.qtyNights}>{qtyNights}</div>
-        {savings && <div className={styles.savings}>{savings}</div>}
+        {savings && <div className="room-savings">{savings}</div>}
     </div>
 );
 
