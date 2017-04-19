@@ -15,9 +15,24 @@ describe('<RoomInfo />', function(){
         const wrapper = shallow( <RoomInfo {...roomInfoProps} /> )
     });
 
+    it('should render not points_earned', function(){
+        const wrapper = shallow( <RoomInfo {...Object.assign({}, roomInfoProps, {free_cancellation: 'true'})} /> )
+        expect(wrapper.find('.room-points-earned').exists()).to.be.false;
+    });
+
+    it('should render points_earned', function(){
+        const wrapper = shallow( <RoomInfo {...Object.assign({}, roomInfoProps, {points_earned: '20'})} /> )
+        expect(wrapper.find('.room-points-earned').exists()).to.be.true;
+    });
+
     it('should render free_cancellation', function(){
-        const wrapper = shallow( <RoomInfo {...Object.assign({free_cancellation: 'true'}, roomInfoProps)} /> )
+        const wrapper = shallow( <RoomInfo {...Object.assign({}, roomInfoProps, {free_cancellation: 'true'})} /> )
         expect(wrapper.find('.room-free-cancellation').exists()).to.be.true;
+    });
+
+    it('should render not free_cancellation', function(){
+        const wrapper = shallow( <RoomInfo {...Object.assign({}, roomInfoProps, {free_cancellation: 'false'})} /> )
+        expect(wrapper.find('.room-free-cancellation').exists()).to.be.false;
     });
 
 });
