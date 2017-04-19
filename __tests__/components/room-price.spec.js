@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { expect } from 'chai';
 
 describe('<RoomPrice />', function(){
     const RoomPrice = require('../../app/components/room-price.js');
@@ -15,7 +16,7 @@ describe('<RoomPrice />', function(){
     });
 
     it('should render savings', function(){
-        const wrapper = shallow( <RoomPrice {{savings: '$20~', ...hotelProps}} /> )
+        const wrapper = shallow( <RoomPrice {...{savings: '$20~', ...hotelProps}} /> )
         expect(wrapper.find('.room-savings').exists()).to.be.true;
     });
 
