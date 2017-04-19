@@ -7,19 +7,23 @@ import HotelInfo from './hotel-info';
 import RoomInfo from './room-info';
 import RoomPrice from './room-price';
 
-import styles from './hotel.styl';
+import styles from './components.styl';
 
 const Hotel = ({
     image, promotion, title, address, rating, rating_type,
     room,
 })  => (
-    <div className={styles.hotelContainer}>
+    <div className="hotel-container">
 
         <HotelAvatar {...{image, promotion}}/>
-        <HotelInfo {...{image, promotion, title, address, image, rating, rating_type}} />
 
-        <RoomInfo {...room} />
-        <RoomPrice {...room} />
+        <div className="hotel-container-2">
+            <div className="line"/>
+            <HotelInfo {...{image, promotion, title, address, image, rating, rating_type}} />
+            
+            <RoomInfo {...room} />
+            <RoomPrice {...room} />
+        </div>
 
     </div>
 );

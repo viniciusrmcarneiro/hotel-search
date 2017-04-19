@@ -117,9 +117,9 @@ const hotelSearchStore = {
             "room": {
                     "qtyNights": "1",
                     "name": "Deluxe Balcony Room",
-                    "price": "$329",
+                    "price": 329,
                     "currency": "AUD",
-                    "savings": "$30~",
+                    "savings": 30,
                     "points_earned": "0",
                     "free_cancellation": "true"
                 }
@@ -135,9 +135,9 @@ const hotelSearchStore = {
             "room": {
                     "qtyNights": "1",
                     "name": "Deluxe King",
-                    "price": "$375",
+                    "price": 375,
                     "currency": "AUD",
-                    "savings": "$28",
+                    "savings": 28,
                     "points_earned": "2250",
                     "free_cancellation": "true"
                 }
@@ -153,9 +153,9 @@ const hotelSearchStore = {
             "room": {
                     "qtyNights": "1",
                     "name": "Deluxe King Room",
-                    "price": "$227",
+                    "price": 227,
                     "currency": "AUD",
-                    "savings": "0",
+                    "savings": 0,
                     "points_earned": "831",
                     "free_cancellation": "false"
                 }
@@ -171,9 +171,9 @@ const hotelSearchStore = {
             "room": {
                     "qtyNights": "1",
                     "name": "Darling Harbour Club Room",
-                    "price": "$535",
+                    "price": 535,
                     "currency": "AUD",
-                    "savings": "0",
+                    "savings": 0,
                     "points_earned": "0",
                     "free_cancellation": "true"
                 }
@@ -189,9 +189,9 @@ const hotelSearchStore = {
             "room": {
                     "qtyNights": "1",
                     "name": "Delue Triple",
-                    "price": "$295",
+                    "price": 295,
                     "currency": "AUD",
-                    "savings": "0",
+                    "savings": 0,
                     "points_earned": "1770",
                     "free_cancellation": "true"
                 }

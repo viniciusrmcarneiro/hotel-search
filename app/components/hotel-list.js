@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import Hotel from './hotel';
 
+import styles from './components.styl';
+
 export const HotelList = ({waiting, hotels,})  => {
     if (waiting === true){
         return <span className="waiting">Loading hotels...</span>
@@ -12,7 +14,7 @@ export const HotelList = ({waiting, hotels,})  => {
     if (!hotels || hotels.length === 0){
         return <span className="empty-list">there is not hotel</span>
     }
-    return <div>
+    return <div className="hotel-list">
         {hotels.map( props => <Hotel key={props.id} {...props}/>)}
     </div>
 }

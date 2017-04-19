@@ -7,18 +7,21 @@ import {
 const initialState = Object.freeze({});
 
 
+const getValue = (value) => parseFloat(value.replace(/[^\d\.]/g, ''));
+
 const convertRoom = (room) => ({
     ...room,
+    price: getValue(room.price),
+    savings: getValue(room.savings),
     qtyNights: "1",
 });
 
-const getPrice = (room) => parseFloat(room.price.replace('$', ''));
 
 const getCheapestRoom = (rooms) => {
     var cheapest = null;
     
     for (var i = 0; i < rooms.length;  i++) {
-        if (cheapest == null || getPrice(rooms[i].price) < getPrice(cheapest.price)) {
+        if (cheapest == null || rooms[i].price < cheapest.price) {
             cheapest = rooms[i];
         }
     }
@@ -47,7 +50,7 @@ function hotelSortByPrice(state, asc){
         : (a,b) => b.price - a.price;
 
     const hotelsIds = Object.keys(state.hotelsById)
-        .map( id => ({ id, price: getPrice(state.hotelsById[id].room) }) )
+        .map( id => ({ id, price: state.hotelsById[id].room.price }) )
         .sort( onCompare )
         .map( hotel => hotel.id );
     return Object.assign({}, state, { hotelsIds, sortedField: `price-${asc ? 'asc' : 'desc' }` });

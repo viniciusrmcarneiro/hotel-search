@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './components.styl';
 
 const RoomInfo = ({name, points_earned, free_cancellation,})  => (
-    <div className={styles.roomInfoContainer}>
-        <div className={styles.roomName}>{name}</div>
+    <div className="room-info-container">
+        <div className="room-name">{name}</div>
         
         {points_earned && points_earned != '0' &&
             <div className="room-points-earned">
@@ -16,7 +16,7 @@ const RoomInfo = ({name, points_earned, free_cancellation,})  => (
         }
 
         {free_cancellation == "true" && 
-            <div className="room-free-cancellation">Free cancellation</div>
+            <div className="room-free-cancellation"><div className="icon"><span className="check-mark">L</span></div><span>Free cancellation</span></div>
         }
     </div>
 );

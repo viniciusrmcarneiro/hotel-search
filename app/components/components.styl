@@ -1,0 +1,125 @@
+.home
+    max-width: 800px
+    min-width: 600px
+
+:local(.search-container)
+    display flex
+    align-items center
+    justify-content space-between
+
+:local(.header-city-name), :local(.header-hotel-count), :local(.field-label)
+    padding 5px
+    font-weight bold
+
+:local(.avatar)
+    position relative
+
+:local(.promotion)
+    position absolute
+    left 0px
+    top 5px
+    padding 7px
+    color red
+    font-weight bold
+    font-size x-small
+    background-color white
+
+:local(.info)
+    padding 5px
+
+.hotel-name
+    max-width 245px
+    padding-right 5px
+    text-overflow ellipsis
+    overflow hidden
+    white-space nowrap
+.hotel-list
+    display flex
+    flex-direction column
+    .hotel-container
+        display flex
+        flex-basis 100%
+        padding-bottom 10px
+        .hotel-info-container
+            flex 0 0 100%
+            .hotel-description-container
+                display flex
+                flex-basis 100%
+
+        .room-info-container
+            flex 3 1
+            padding 2px
+            display flex
+            flex-wrap wrap
+            .room-name
+                color #f00
+                text-decoration underline
+                flex-grow 1
+                font-size small
+            .room-points-earned
+                color burlywood
+                display flex
+                flex-direction column
+                align-items flex-end
+
+            .room-free-cancellation
+                color #1c6d4a
+                flex-basis 100%
+                display flex
+                align-items flex-end
+                font-size small
+                .icon 
+                    width 12px
+                    height 12px
+                    border-radius 7px
+                    border green 1px solid
+                    margin-right 3px
+        .room-price-container
+            flex 1 1
+            justify-content space-around
+            display flex
+            flex-direction column
+            align-items flex-end
+.check-mark
+    transform scaleX(-1) rotate(-35deg)
+    font-family arial
+    padding-left 10px
+    padding-bottom 21px
+:local(.hotel-address)
+    font-size small
+    color gray
+
+.hotel-container-2    
+    display flex
+    position relative
+    flex-wrap wrap
+    flex-grow 1
+    padding 10px 10px 0 10px
+    :local(.hotel-info-container)
+        flex-basis 100%
+    div
+        display flex
+        flex-wrap wrap
+    .line
+        height 0px
+        width 100%
+        border-top #ddd 1px solid
+        position absolute
+        top -3px
+.room-price
+    font-size x-large
+    .dollar
+        font-size medium
+        padding-right 1px
+
+.qty-nights-container
+    font-weight lighter
+    font-size small
+    .qty-nights
+        font-weight bold
+.room-savings
+    color red
+
+
+
+

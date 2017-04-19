@@ -7,8 +7,8 @@ describe('<RoomPrice />', function(){
     const hotelProps = {
         currency: 'AUD',
         qtyNights: '1',
-        price: '$329',
-        savings: '0',
+        price: 329,
+        savings: 0,
     };
 
     it('should not render savings ', function(){
@@ -17,7 +17,7 @@ describe('<RoomPrice />', function(){
     });
 
     it('should render savings', function(){
-        const wrapper = shallow( <RoomPrice {...{...hotelProps, savings: '$20~',}} /> )
+        const wrapper = shallow( <RoomPrice {...{...hotelProps, savings: 20,}} /> )
         expect(wrapper.find('.room-savings').exists()).to.be.true;
     });
 

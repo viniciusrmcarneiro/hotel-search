@@ -21,9 +21,9 @@ describe('<Hotel />', function(){
         "promotion": "Exclusive Deal",
         "room": {
             "name": "Deluxe Balcony Room",
-            "price": "$329",
+            "price": 329,
             "currency": "AUD",
-            "savings": "$30~",
+            "savings": 30,
             "points_earned": "0",
             "free_cancellation": "true",
             "qtyNights": "1",

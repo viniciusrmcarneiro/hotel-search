@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HotelRating from './hotel-rating';
-import styles from './hotel.styl';
+
+import styles from './components.styl';
 
 const HotelInfo = ({title, address, promotion, image, rating, rating_type})  => (
-    <div className={styles.container}>
+    <div className="hotel-info-container">
 
-        <div className={styles.descriptionContainer}>
-            <span className={styles.hotelName}>{title}</span>
+        <div className="hotel-description-container">
+            <span className="hotel-name">{title}</span>
             <div>
                 <HotelRating rating_value={rating} rating_type={rating_type}/>
             </div>
-            <div className={styles.hotelAddress}>
-                <span>{address}</span>
-            </div>
+        </div>
+        <div className={styles.hotelAddress}>
+            <span>{address}</span>
         </div>
     </div>
 );

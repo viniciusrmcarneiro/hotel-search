@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './hotel.styl';
+
+import styles from './components.styl';
 
 const HotelAvatar = ({promotion, image,})  => (
     <div className={styles.avatar}>

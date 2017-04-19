@@ -7,7 +7,7 @@ import { hotelSearch } from 'app/actions/hotel-search-actions';
 import HotelList from 'app/components/hotel-list';
 import SearchHeader from 'app/components/search-header';
 
-import styles from './home.styl';
+import styles from './components.styl';
 
 class Home extends Component {
     constructor(props){
@@ -24,7 +24,7 @@ class Home extends Component {
     render() {
         return (
             <Provider store={this.state.store}>
-                <div className={styles.home}>
+                <div className="home">
 
                     <SearchHeader />
                     <HotelList />

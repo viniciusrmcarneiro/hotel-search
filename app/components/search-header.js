@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 
 import { sortBy } from 'app/actions/hotel-search-actions';
 
-import styles from './search-header.styl';
+import styles from './components.styl';
 
 export const SearchHeader = ({cityName, hotelsCount, sortValue, sortOptions, onSortChanged,})  => {
     if (!cityName || !sortValue || !sortOptions || !onSortChanged){
@@ -16,7 +16,7 @@ export const SearchHeader = ({cityName, hotelsCount, sortValue, sortOptions, onS
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.searchContainer}>
             <p className={styles.textContainer}>
                 <span className={styles.headerHotelCount}>{hotelsCount}</span> hotels in <span className={styles.headerCityName}>{cityName}.</span>
             </p>
