@@ -7,22 +7,34 @@ services:
     volumes:
       - $PWD:/app
       - $HOME:/root
+    environment:
+      TMPDIR: /tmp
+      PHANTOMJS_CDNURL: https://bitbucket.org/ariya/phantomjs/downloads
   app-dev:
     extends:
       service: app-base
     ports:
       - "4000:4000"
+    environment:
+      TMPDIR: /tmp
+      PHANTOMJS_CDNURL: https://bitbucket.org/ariya/phantomjs/downloads
   app-test:
     extends:
       service: app-base
     command: npm run test-coverage
     ports:
       - "9876:9876"
+    environment:
+      TMPDIR: /tmp
+      PHANTOMJS_CDNURL: https://bitbucket.org/ariya/phantomjs/downloads
   app-deploy:
     extends:
       service: app-base
     ports:
       - "4000:4000"
+    environment:
+      TMPDIR: /tmp
+      PHANTOMJS_CDNURL: https://bitbucket.org/ariya/phantomjs/downloads
     image: viniciusrmcarneiro/hotel-search:latest
     build:
       context: ./

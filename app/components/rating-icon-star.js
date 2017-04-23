@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes, } from 'react';
 
 const RatingIconStar = (props) =>  (
     <svg viewBox="0 0 32 32" style={{width:"1em", height:"1em", verticalAlign: "middle"}} >

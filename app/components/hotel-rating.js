@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes, } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 import RatingIconCircle from './rating-icon-circle';

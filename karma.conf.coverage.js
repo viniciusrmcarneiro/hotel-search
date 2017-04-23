@@ -30,7 +30,7 @@ module.exports = function(config) {
                 path.join(__dirname,'/app'),
             ],
             query: {
-                cacheDirectory: true,
+                cacheDirectory: false,
             },
         },
     ];

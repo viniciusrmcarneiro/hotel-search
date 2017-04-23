@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes, } from 'react';
 
 const RatingIconCircle = (props) => (
     <svg viewBox="0 0 12 12" style={{width:"0.8em", height:"0.8em", transform: "rotate(90deg)", verticalAlign: "middle"}}>

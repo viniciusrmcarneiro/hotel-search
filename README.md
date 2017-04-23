@@ -13,7 +13,7 @@ Style
 
 Developmemt mode
 ----------------
-- first you need to install all the required packages by running this command: `docker-compose run --rm app-dev npm install`
+- first you need to install all the required packages by running this command: `docker-compose run --rm app-dev yarn install`
 
 - to start the server and to see the website, just run the command: `docker-compose run --rm --service-ports app-dev`
   + to run the tests and to see the mocha result page open the URL http://localhost:4000/__tests__/index.html on your browser

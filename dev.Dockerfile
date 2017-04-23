@@ -1,6 +1,5 @@
 FROM node:6.9.4
-COPY package.json /app/
+RUN npm install -g yarn@0.22.0
 WORKDIR /app
-RUN npm install
 EXPOSE 4000
 CMD npm start

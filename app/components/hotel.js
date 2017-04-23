@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes, } from 'react';
 
 import HotelAvatar from './hotel-avatar';
 import HotelInfo from './hotel-info';
